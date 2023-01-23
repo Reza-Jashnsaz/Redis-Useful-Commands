@@ -1,0 +1,128 @@
+﻿
+
+
+
+install in ubuntu
+   sudo apt-get install redis-server
+
+
+
+for test
+   redis-cli
+   ping 
+
+
+
+connect to redis
+   redis-cli -h {ip} -h {port}  -a {password}
+
+
+
+create key
+   SET {key} {value}
+
+
+read key
+   GET {key}
+
+
+
+delete key
+   DEL {key}
+
+
+
+specify expire date for key
+   EXPIRE {key} {seconds}
+
+
+
+.............................................................................................
+
+string
+
+
+SET name "reza jashn"
+APPEND name "saz"
+///output = reza jashnsaz
+
+
+
+SET number 20
+DECRBY number 3
+///output = 17
+
+
+
+SET  mykey "hello world"
+GETRANGE mykey 0 4
+///output = hello
+
+....................................................................................
+
+
+list
+
+
+create list
+    RPUSH posts post1 post2 post3
+
+
+read list
+    LRANGE posts {range}
+
+................................................................................
+
+hash
+ 
+
+create hash
+    HSET {user1} name ali age 20 height 170
+
+
+read hash
+   HGET {user1} name
+   HGETALL {user1} 
+
+....................................................................................
+
+
+set
+
+
+create set
+   SADD posts post1 post2
+
+read set
+   SMEMBERS posts
+
+.....................................................................................
+8
+sorted set
+
+
+create sorted set
+   ZADD {scores}  12 ali  15 reza
+
+read sorted set
+   ZRANGE {scores} {range}
+
+...............................................................................................
+
+
+pub sub
+
+
+send message in channel
+   publish {channelname} {message}
+
+
+listen to channel
+   subscribe {channelname}
+
+....................................................................................................................
+
+
+
+
+
